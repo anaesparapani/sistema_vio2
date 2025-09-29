@@ -1,5 +1,4 @@
-require("dotenv").config();
-const mysql = require("mysql2"); //Importa o mysql
+const mysql = require("mysql2");
 
 const pool = mysql.createPool({
   connectionLimit: 10,
@@ -7,7 +6,7 @@ const pool = mysql.createPool({
   user: process.env.MYSQLUSER || process.env.DB_USER,
   password: process.env.MYSQLPASSWORD || process.env.DB_PASSWORD,
   database: process.env.MYSQLDATABASE || process.env.DB_NAME,
-  port: process.env.MYSQLPORT || 3306
+  port: process.env.MYSQLPORT || 3306,
 });
 
-module.exports = pool; //Para usar o mysql
+module.exports = pool;
